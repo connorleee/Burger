@@ -5,8 +5,8 @@ router = express.Router();
 // controller will res.render to template engine
 // controller handlest the API calls and talks to model to retrieve stuff from DB
 
-router.get("/", function(req, res) {
-    burger.all(function(data){
+router.get("/", function (req, res) {
+    burger.all(function (data) {
         console.log(data)
         // console.log(data[0])
 
@@ -19,6 +19,14 @@ router.get("/", function(req, res) {
 
         res.render("index", hbsObject)
     })
-})
+});
+
+router.post("/api/burgers", function (req, res) {
+    burger.create(
+        "burger_name", req.body.burgerName, function (result) {
+            res.json({ id: result.insertId });
+        }
+    );
+});
 
 module.exports = router;
