@@ -11,7 +11,8 @@ router.get("/", function(req, res) {
         // console.log(data[0])
 
         let hbsObject = {
-            burgers: data
+            burgers: data,
+            style: "index"
         }
 
         // console.log(hbsObject)
