@@ -7,36 +7,44 @@
     <div class="row justify-content-between">
         <div class="col-md-5">
             {{#each burgers}}
-                {{#unless devoured}}
-                    <h3>
-                        {{burger_name}}
-                        <button type="button" class="btn btn-primary float-right" id="devour{{id}}">Devour</button>
-                    </h3>
-                {{/unless}}
+            {{#unless devoured}}
+            <h3>
+                {{burger_name}}
+                <button type="button" class="btn btn-primary float-right" id="devour{{id}}">Devour</button>
+            </h3>
+            {{/unless}}
             {{/each}}
         </div>
 
         <div class="col-md-5">
             {{#each burgers}}
-                 {{#if devoured}}
-                    <h3>
-                        {{burger_name}}
-                    </h3>
-                {{/if}}
+            {{#if devoured}}
+            <h3>
+                {{burger_name}}
+            </h3>
+            {{/if}}
             {{/each}}
         </div>
     </div>
 
-    <br>
+    <br><br>
 
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <form>
-                <div class="form-group text-center">
-                    <label><h2>What burger masterpiece is on your mind?</h2></label>
-                    <input class="form-control-lg text-center" id="burgerName">
-                </div>
+        <div class="col-md-8 text-center">
+            <label>
+                <h2>What burger masterpiece is on your mind?</h2>
+            </label>
+
+            <br>
+
+            <form id="burgerName">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control">
             </form>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="burgerInput">Add Burger</button>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
