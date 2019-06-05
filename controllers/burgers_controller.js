@@ -8,14 +8,11 @@ router = express.Router();
 router.get("/", function (req, res) {
     burger.all(function (data) {
         console.log(data)
-        // console.log(data[0])
 
         let hbsObject = {
             burgers: data,
             style: "index"
         }
-
-        // console.log(hbsObject)
 
         res.render("index", hbsObject)
     })
