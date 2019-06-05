@@ -1,11 +1,21 @@
 console.log("test load")
 
-$("#burgerInput").on("click", (event) => {
-    // event.preventDefault();
+$(function () {
+    $("#burgerInput").click(function (event) {
+        event.preventDefault();
 
-    console.log("test")
+        let newBurger = {burgerName: $("#burgerName").val().trim()}
 
-    var burgerName = $("#burgerName").val();
+        console.log(newBurger)
 
-    console.log(burgerName)
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger,
+            dataType: "text"
+        }).then(()=>{
+            console.log("created new burger");
+            location.reload();
+        })
+    })
+
 })

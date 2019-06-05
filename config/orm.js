@@ -40,9 +40,9 @@ const orm = {
 
         queryString += " (";
         queryString += cols.toString();
-        queryString += ") VALUES (";
-        queryString += printQuestionMarks(vals.length);
-        queryString += ") ";
+        queryString += ") VALUES ('";
+        queryString += vals;
+        queryString += "') ";
 
         console.log(queryString);
 
