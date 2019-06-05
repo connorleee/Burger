@@ -31,20 +31,22 @@
 
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-            <label>
-                <h2>What burger masterpiece is on your mind?</h2>
-            </label>
 
-            <br>
-
-            <form id="burgerName">
+            <form class="create-form">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control">
-            </form>
+                    <label for="burgerName">
+                        <h2>What burger masterpiece is on your mind?</h2>
+                    </label>
+
+                    <br>
+
+                    <input type="text" class="form-control" id="burgerName" name="name">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="burgerInput">Add Burger</button>
+                        <button class="btn btn-outline-secondary" type="submit" id="burgerInput">Add Burger</button>
                     </div>
                 </div>
+            </form>
+
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 console.log("test load")
 
-$("#burgerInput").click(() => {
+$("#burgerInput").on("click", (event) => {
     // event.preventDefault();
 
     console.log("test")
