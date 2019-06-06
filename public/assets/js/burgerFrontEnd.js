@@ -17,16 +17,10 @@ $(document).ready(function() {
     })
 
     $(".devour").on("click", function() {
-        console.log("devour button clicked")
-
-        console.log($(this))
-
         let id = $(this).data("id")
         let newDevouredState = {
             devoured: true
         };
-
-        console.log(id)
 
         $.ajax("api/burgers/" + id, {
             type: "PUT",
@@ -37,4 +31,14 @@ $(document).ready(function() {
         })
     })
 
+    $(".delete").on("click", function(){
+        let id = $(this).data("id");
+
+        $.ajax("api/burgers/" + id, {
+            type: "DELETE"
+        }).then(function(){
+            console.log("Deleted burger id: " + id);
+            location.reload();
+        })
+    })
 })
