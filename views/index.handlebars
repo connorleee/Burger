@@ -7,22 +7,21 @@
     <div class="row justify-content-between">
         <div class="col-md-5">
             {{#each burgers}}
-            {{#unless devoured}}
-            <h3>
-                {{burger_name}}
-                <button type="button" class="btn btn-primary float-right" id="devour{{id}}">Devour</button>
-            </h3>
-            {{/unless}}
+                {{#unless devoured}}
+                    <h3>
+                        {{> burgers/burger-block devoured=true}}
+                    </h3>
+                {{/unless}}
             {{/each}}
         </div>
 
         <div class="col-md-5">
             {{#each burgers}}
-            {{#if devoured}}
-            <h3>
-                {{burger_name}}
-            </h3>
-            {{/if}}
+                {{#if devoured}}
+                    <h3>
+                        {{> burgers/burger-block devoured=false}}
+                    </h3>
+                {{/if}}
             {{/each}}
         </div>
     </div>
